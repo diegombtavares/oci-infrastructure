@@ -29,19 +29,19 @@ Este projeto utiliza o Terraform para gerenciar recursos de infraestrutura na or
 1. Inicialize o diretório do Terraform:
 
     ```bash
-    terraform init
+    terraform -chdir=modules/compute init 
     ```
 
 2. Visualize as alterações que serão feitas:
 
     ```bash
-    terraform plan
+    terraform -chdir=modules/compute plan
     ```
 
 3. Aplique as alterações para criar os recursos na nuvem:
 
     ```bash
-    terraform apply
+    terraform -chdir=modules/compute apply -var="client=subdomain-partner"
     ```
 
 4. Confirme a aplicação digitando `yes` quando solicitado.
