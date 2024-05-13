@@ -1,7 +1,0 @@
-compartment_id = "<ID>"
-source_id = "<ID>"
-subnet_id = "<ID>"
-instance_name = "<NAME-INSTANCE>"
-tenancy_ocid = "<ID>"
-user_ocid = "<ID>"
-fingerprint = "<ID>"
