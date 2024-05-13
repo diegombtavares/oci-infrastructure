@@ -2,4 +2,6 @@ keys
 modules/compute/terraform.tfvars
 modules/compute/.terraform
 modules/compute/.terraform.*
+modules/compute/terraform.tfstate
 compartment
+modules/compute/terraform.tfstate.backup
