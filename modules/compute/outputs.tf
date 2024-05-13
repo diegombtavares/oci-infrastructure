@@ -1,5 +1,5 @@
 output "created-instance" {
-    value = var.instance_name
+    value = var.client
 }
 
 # output "instance" {

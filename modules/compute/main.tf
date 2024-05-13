@@ -6,7 +6,7 @@ resource "oci_core_instance" "ubuntu" {
     source_id   = var.source_id
     source_type = "image"
   }
-  display_name = var.instance_name
+  display_name = var.client
 
   create_vnic_details {
     assign_public_ip = true
