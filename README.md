@@ -1,4 +1,4 @@
-# README
+# OCI Infrastructure
 
 ## Como Rodar o Projeto com Terraform
 
@@ -13,7 +13,7 @@ Este projeto utiliza o Terraform para gerenciar recursos de infraestrutura na or
 1. Clone este repositório em sua máquina local:
 
     ```bash
-    git clone git@github.com:diegombtavares/oci-infrastructure.git
+    git clone <repositorie>
     ```
 
 2. Navegue até o diretório do projeto:
@@ -22,8 +22,16 @@ Este projeto utiliza o Terraform para gerenciar recursos de infraestrutura na or
     cd oci-insfrastructure
     ```
 
-3. Crie um arquivo `terraform.tfvars` e defina as variáveis necessárias. Você pode usar o arquivo `terraform.tfvars.example` como referência.
+3. Crie um arquivo `terraform.tfvars` e defina as variáveis necessárias. 
 
+    ```bash
+    compartment_id = "<ID>"
+    source_id = "<ID>"
+    subnet_id = "<ID>"
+    tenancy_ocid = "<ID>"
+    user_ocid = "<ID>"
+    fingerprint = "<ID>" 
+    ```
 ### Executando o Terraform
 
 1. Inicialize o diretório do Terraform:
@@ -35,13 +43,13 @@ Este projeto utiliza o Terraform para gerenciar recursos de infraestrutura na or
 2. Visualize as alterações que serão feitas:
 
     ```bash
-    terraform -chdir=modules/compute plan
+    terraform -chdir=modules/compute plan -var="subdomain=tfmachine" -var="domain=gosac.com.br"
     ```
 
 3. Aplique as alterações para criar os recursos na nuvem:
 
     ```bash
-    terraform -chdir=modules/compute apply -var="client=subdomain-partner"
+    terraform -chdir=modules/compute apply -var="subdomain=tfmachine" -var="domain=gosac.com.br"
     ```
 
 4. Confirme a aplicação digitando `yes` quando solicitado.
