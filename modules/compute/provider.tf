@@ -2,6 +2,6 @@ provider "oci" {
     tenancy_ocid = var.tenancy_ocid
     user_ocid = var.user_ocid
     fingerprint = var.fingerprint
-    private_key_path = "/home/diegombtavares/terraform/oci-infrastructure/keys/my-key.pem"
+    private_key_path = "/home/diegombtavares/oci-infrastructure/keys/my-key.pem"
     region = "sa-saopaulo-1"
 }
