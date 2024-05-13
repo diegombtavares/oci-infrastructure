@@ -1,0 +1,11 @@
+#cloud-config
+runcmd:
+  - sed -i "s/ALTER_CLIENT/${subdomain}.${domain}/" /home/ubuntu/app/backend/.env
+  - sed -i "s/PARTNER/${domain_prefix}/" /home/ubuntu/app/next/.env
+  - sed -i "s/ALTER_CLIENT/${subdomain}.${domain}/" /home/ubuntu/app/next/src/configs/api.json
+  - sed -i "s/ALTER_CLIENT/${subdomain}.${domain}/" /home/ubuntu/nginx/gosac.conf
+  - sed -i "s/subdomain/${subdomain}/" /home/ubuntu/docker-compose.yaml
+  - sed -i "s/domain/${domain}/" /home/ubuntu/docker-compose.yaml
+  - cd /home/ubuntu/app/backend && yarn && yarn build
+  - cd /home/ubuntu/app/next && yarn && yarn build
+  - cd /home/ubuntu/app/services/whatsapp && yarn && yarn build
