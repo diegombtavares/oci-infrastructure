@@ -1,3 +1,5 @@
 keys
 modules/compute/terraform.tfvars
+modules/compute/.terraform
+modules/compute/.terraform.*
 compartment
