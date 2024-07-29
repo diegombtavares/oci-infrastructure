@@ -40,3 +40,11 @@ data "oci_identity_availability_domain" "ad" {
   compartment_id = var.tenancy_ocid
   ad_number      = var.ad_region_mapping[var.region]
 }
+
+
+resource "oci_core_virtual_network" "tcb_vcn" {
+  cidr_block     = "10.1.0.0/16"
+  compartment_id = var.compartment_ocid
+  display_name   = "tcbVCN"
+  dns_label      = "tcbvcn"
+}
