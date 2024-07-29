@@ -48,3 +48,14 @@ resource "oci_core_virtual_network" "tcb_vcn" {
   display_name   = "tcbVCN"
   dns_label      = "tcbvcn"
 }
+
+resource "oci_core_subnet" "tcb_subnet" {
+  cidr_block        = "10.1.20.0/24"
+  display_name      = "tcbSubnet"
+  dns_label         = "tcbsubnet"
+  security_list_ids = [oci_core_security_list.tcb_security_list.id]
+  compartment_id    = var.compartment_ocid
+  vcn_id            = oci_core_virtual_network.tcb_vcn.id
+  route_table_id    = oci_core_route_table.tcb_route_table.id
+  dhcp_options_id   = oci_core_virtual_network.tcb_vcn.default_dhcp_options_id
+}
